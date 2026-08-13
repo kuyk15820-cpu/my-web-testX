@@ -287,7 +287,7 @@ footer a { color: var(--accent2); text-decoration: none; }
   background-color: var(--surface2);
 }
 
-/* ── Corner Badge (ตามแบบรูปภาพ) ───────────────── */
+/* ── Corner Badge (ปรับการตัดเฉียงตัดลงมาทางขวา) ── */
 .card-corner-badge {
   position: absolute;
   top: 0;
@@ -298,7 +298,7 @@ footer a { color: var(--accent2); text-decoration: none; }
   font-style: italic;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%);
   border-bottom-left-radius: 8px;
   border-top-right-radius: var(--radius);
   z-index: 2;
