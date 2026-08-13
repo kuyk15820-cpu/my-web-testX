@@ -287,46 +287,36 @@ footer a { color: var(--accent2); text-decoration: none; }
   background-color: var(--surface2);
 }
 
-/* ── Ribbon Top Right ─────────────────────────── */
-.ribbon-top-right {
+/* ── Corner Badge (ตามแบบรูปภาพ) ───────────────── */
+.card-corner-badge {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 85px;
-  height: 85px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.ribbon-top-right span {
-  position: absolute;
-  display: block;
-  width: 115px;
-  padding: 4px 0;
-  left: -10px;
-  top: 22px;
-  transform: rotate(45deg);
-  text-align: center;
-  font-size: 0.65rem;
+  top: 0;
+  right: 0;
+  padding: 3px 12px 3px 18px;
+  font-size: 0.7rem;
   font-weight: 800;
+  font-style: italic;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.5);
+  clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: var(--radius);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.ribbon-top-right.free span {
+.card-corner-badge.free {
   background: #4cd964;
   color: #0d0d14;
 }
 
-.ribbon-top-right.vip span,
-.ribbon-top-right.pro span {
-  background: #ffd700;
+.card-corner-badge.vip,
+.card-corner-badge.pro {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
   color: #0d0d14;
 }
 
-.ribbon-top-right.tool span {
+.card-corner-badge.tool {
   background: #3b82f6;
   color: #ffffff;
 }
