@@ -152,6 +152,8 @@ body {
   transition: background .15s, border-color .15s;
   -webkit-tap-highlight-color: transparent !important;
   outline: none !important;
+  position: relative;
+  overflow: hidden;
 }
 
 .pkg-card:hover,
@@ -283,4 +285,48 @@ footer a { color: var(--accent2); text-decoration: none; }
   border-radius: 13px;
   flex-shrink: 0;
   background-color: var(--surface2);
+}
+
+/* ── Ribbon Top Right ─────────────────────────── */
+.ribbon-top-right {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ribbon-top-right span {
+  position: absolute;
+  display: block;
+  width: 115px;
+  padding: 4px 0;
+  left: -10px;
+  top: 22px;
+  transform: rotate(45deg);
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+.ribbon-top-right.free span {
+  background: #4cd964;
+  color: #0d0d14;
+}
+
+.ribbon-top-right.vip span,
+.ribbon-top-right.pro span {
+  background: #ffd700;
+  color: #0d0d14;
+}
+
+.ribbon-top-right.tool span {
+  background: #3b82f6;
+  color: #ffffff;
 }
