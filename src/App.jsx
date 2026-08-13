@@ -144,8 +144,8 @@ export default function App() {
 
           const CardContent = (
             <>
-              <div className="card-corner-badge free">
-                FREE
+              <div className="ribbon ribbon-top-right free">
+                <span>FREE</span>
               </div>
               <PkgIconImg src={iconSrc} alt={`${pkg.name} icon`} />
               <div className="pkg-info">
@@ -197,8 +197,8 @@ export default function App() {
 
           const CardContent = (
             <>
-              <div className="card-corner-badge pro">
-                VIP
+              <div className="ribbon ribbon-top-right pro">
+                <span>PRO</span>
               </div>
               <PkgIconImg src={iconSrc} alt={`${pkg.name} icon`} />
               <div className="pkg-info">
