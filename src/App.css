@@ -153,7 +153,7 @@ body {
   -webkit-tap-highlight-color: transparent !important;
   outline: none !important;
   position: relative;
-  overflow: hidden;
+  /* ไม่ใส่ overflow: hidden เพื่อให้ ribbon ลอยพับขอบการ์ดได้ตามต้นฉบับ */
 }
 
 .pkg-card:hover,
@@ -287,36 +287,68 @@ footer a { color: var(--accent2); text-decoration: none; }
   background-color: var(--surface2);
 }
 
-/* ── Corner Badge (ปรับการตัดเฉียงตัดลงมาทางขวา) ── */
-.card-corner-badge {
+/* ── Ribbon Top Right (ถอดแบบตามโค้ดที่คุณส่งมาเป๊ะๆ) ── */
+.ribbon {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 3px 12px 3px 18px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%);
-  border-bottom-left-radius: 8px;
-  border-top-right-radius: var(--radius);
+  right: -5px;
+  top: -5px;
   z-index: 2;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
   pointer-events: none;
 }
 
-.card-corner-badge.free {
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  right: -21px;
+}
+
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #000;
+}
+
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #000;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #000;
+}
+
+/* สีของ Ribbon แต่ละประเภท */
+.ribbon.free span {
   background: #4cd964;
   color: #0d0d14;
 }
 
-.card-corner-badge.vip,
-.card-corner-badge.pro {
-  background: linear-gradient(135deg, #ffd700, #ffa500);
+.ribbon.pro span,
+.ribbon.vip span {
+  background: #ffd700;
   color: #0d0d14;
-}
-
-.card-corner-badge.tool {
-  background: #3b82f6;
-  color: #ffffff;
 }
